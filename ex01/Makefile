@@ -6,29 +6,54 @@
 #    By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/29 11:14:06 by efumiko           #+#    #+#              #
-#    Updated: 2021/01/09 10:51:40 by efumiko          ###   ########.fr        #
+#    Updated: 2021/01/09 19:45:49 by efumiko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = pbook
+NAME = phonebook
 
-SRC = main.cpp ContactPbook.cpp Pbook.cpp
+# INCLUDES
+INC_DIR = ./
+INC_FILES = Pbook.hpp ContactPbook.hpp
+INC = $(addprefix $(INC_DIR), $(INC_FILES))
 
-OBJ = $(SRC:.cpp=.o)
+# SOURCES 
+SRC_DIR = ./
+SRC_FILES =	main.cpp ContactPbook.cpp Pbook.cpp
+SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 
-CFLAGS = -Wall -Werror -Wextra
+# OBJECTS
+OBJ_DIR = obj/
+OBJS =	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
 
+# COMP
+CC = clang++
+CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR)
+
+# MAIN
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	clang++ -o $(NAME) $(CFLAGS) $(OBJ)
+$(NAME): $(OBJ_DIR) $(OBJS)
+	@$(CC) $(FLAGS) $(OBJS) -o $@
+	@echo "================ ALL DONE! ================"
+
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)%.o : $(SRC_DIR)%.cpp $(INC)
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ)
+	@rm -rf $(OBJ_DIR)
+	@echo "================ CLEAN DONE! ================"
+
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -f $(NAME)
+	@echo "================ FCLEAN DONE! ================"
+
 
 re: fclean all
 
-.PHONY: all clean fclean re run
+.PHONY: all clean fclean re
