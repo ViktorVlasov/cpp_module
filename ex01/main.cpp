@@ -6,12 +6,12 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 20:31:01 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/08 23:04:25 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/09 11:12:24 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Pbook.hpp>
-#include <ContactPbook.hpp>
+#include "Pbook.hpp"
+#include "ContactPbook.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 	{
 		std::cout << "Enter command: ";
 		std::cin >> command;
+		std::cin.get();
 		if (command == "EXIT")
 		{
 			std::cout << "Bye!\n";
