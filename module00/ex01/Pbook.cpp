@@ -6,15 +6,19 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 22:14:13 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/09 12:08:31 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/13 10:06:39 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Pbook.hpp"
 
-Pbook::Pbook()
+Pbook::Pbook() : amount_elem(0), phoneBook(new ContactPbook[PBOOK_SIZE])
 {
-    amount_elem = 0;
+}
+
+Pbook::~Pbook()
+{
+    delete[] phoneBook;
 }
 
 bool Pbook::add_elem()
@@ -22,7 +26,6 @@ bool Pbook::add_elem()
     std::string first_name, last_name, nickname, login, postal_address,
                 email_address, phone_number, birthday_date, favorite_meal,
                 underwear_color, darkest_secret;
-
 
     if (amount_elem < this->PBOOK_SIZE)
     {

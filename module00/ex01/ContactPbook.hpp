@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   ContactPbook.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 21:03:45 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/08 22:10:03 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/13 10:00:53 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,17 @@ public:
 				std::string favorite_meal,
 				std::string underwear_color,
 				std::string darkest_secret);
-	std::string getFirstName(void);
-	std::string getLastName(void);
-	std::string getNickname(void);
-	std::string getLogin(void);
-	std::string getPostalAddress(void);
-	std::string getEmailAddress(void);
-	std::string getPhoneNumber(void);
-	std::string getBirthdayDate(void);
-	std::string getFavoriteMeal(void);
-	std::string getUnderwearColor(void);
-	std::string getDarkestSecret(void);
+	std::string getFirstName(void) const;
+	std::string getLastName(void) const;
+	std::string getNickname(void) const;
+	std::string getLogin(void) const;
+	std::string getPostalAddress(void) const;
+	std::string getEmailAddress(void) const;
+	std::string getPhoneNumber(void) const;
+	std::string getBirthdayDate(void) const;
+	std::string getFavoriteMeal(void) const;
+	std::string getUnderwearColor(void) const;
+	std::string getDarkestSecret(void) const;
 };
 
 #endif
