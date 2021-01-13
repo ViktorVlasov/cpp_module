@@ -6,17 +6,15 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 21:13:02 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/09 22:26:02 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/13 11:37:27 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Pony.hpp"
 
-Pony::Pony(std::string name, std::string color, std::string sound)
+Pony::Pony(std::string name, std::string color, std::string sound) 
+			: name(name), color(color), sound(sound)
 {
-	this->name = name;
-	this->color = color;
-	this->sound = sound;
 }
 
 Pony::~Pony()

@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 22:36:21 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/10 00:16:42 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/13 11:49:18 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ public:
 	Zombie *newZombie(std::string name);
 	Zombie *randomChump(void);
 };
-
 
 #endif

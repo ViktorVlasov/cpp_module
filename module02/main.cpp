@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/09 21:13:00 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/13 11:36:53 by efumiko          ###   ########.fr       */
+/*   Created: 2021/01/13 00:26:09 by efumiko           #+#    #+#             */
+/*   Updated: 2021/01/13 00:26:20 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+#include "Fixed.hpp"
 
-# include <iostream>
-
-class Pony
-{
-private:
-    std::string name;
-    std::string color;
-    std::string sound;
-public:
-    Pony(std::string name, std::string color, std::string sound);
-    ~Pony();
-    std::string getName();
-    std::string getColor();
-    void makeSound();
-};
-
-#endif
+int main( void ) {
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    return 0;
+}

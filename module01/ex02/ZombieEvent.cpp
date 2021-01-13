@@ -6,15 +6,14 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 22:36:23 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/11 16:02:29 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/13 11:56:46 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
 
-ZombieEvent::ZombieEvent()
+ZombieEvent::ZombieEvent() : type("")
 {
-    type = "Default";
     srand(static_cast<unsigned int>(time(0)));
 }
 
@@ -38,7 +37,7 @@ Zombie *ZombieEvent::randomChump(void)
     std::string name;
     
     name = "Zombie" + std::to_string(rand() % 50);
-    Zombie *randomZombie = new Zombie(name, type);
+    Zombie *randomZombie = newZombie(name);
     randomZombie->announce();
     return (randomZombie);
 }

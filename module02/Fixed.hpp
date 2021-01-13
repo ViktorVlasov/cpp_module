@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/09 21:13:00 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/13 11:36:53 by efumiko          ###   ########.fr       */
+/*   Created: 2021/01/12 23:50:40 by efumiko           #+#    #+#             */
+/*   Updated: 2021/01/13 00:22:57 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 # include <iostream>
 
-class Pony
+class Fixed
 {
 private:
-    std::string name;
-    std::string color;
-    std::string sound;
+    int fixed_value;
+    static const int num_fract_bits = 8;
 public:
-    Pony(std::string name, std::string color, std::string sound);
-    ~Pony();
-    std::string getName();
-    std::string getColor();
-    void makeSound();
+    Fixed();
+    Fixed(const Fixed &fixed);
+    ~Fixed();
+    Fixed &operator=(Fixed const &other);
+    int getRawBits(void) const;
 };
+
 
 #endif
