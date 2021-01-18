@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 22:50:44 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/12 23:30:59 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/18 19:04:18 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,38 @@
 # include <fstream>
 # include <sstream>
 # include <cstring>
+#include <algorithm>
 
-const std::string &str_replace(std::string line, const std::string &search, const std::string &replace)
+std::string replace_words(std::string line, const std::string &search_str, const std::string &replace_str)
 {
-	std::stringstream ss;
-	size_t j;
-	size_t slength(search.length());
+	int search_len = search_str.length();
+	int hit_index;
+    std::stringstream result;
 
-	for (size_t i = 0; i < line.length(); i++)
+	for (int index_line = 0; index_line < line.length(); index_line++)
 	{
-		j = 0;
-		while (line[i + j] == search[j] && j < slength)
-			j++;
-		if (j == slength)
+		hit_index = 0;
+		while (line[index_line + hit_index] == search_str[hit_index] && hit_index < search_len)
+			hit_index++;
+            
+		if (hit_index == search_len)
 		{
-			ss << replace;
-			i += (j - 1);
+			result << replace_str;
+			index_line += (hit_index - 1);
 		}
 		else
-			ss << line[i];
+			result << line[index_line];
 	}
-	return (ss.str());
+	return (result.str());
+    
+    // with c++ 11
+    // std::string result(line);
+    // size_t pos = result.find(search_str);
+    // while (pos != std::string::npos) {
+    //     result.replace(pos, search_str.size(), replace_str);
+    //     pos = result.find(search_str, pos);
+    // }
+    // return result;
 }
 
 int main(int argc, char const *argv[])
@@ -56,12 +67,12 @@ int main(int argc, char const *argv[])
             file.open(argv[1]);
 	        if (!file.is_open())
 		        throw "Invalid input file.";
-            file.open(std::string(argv[1]) + ".replace", std::ios::trunc);
+            output.open(std::string(argv[1]) + ".replace", std::ios::trunc);
             if (!output.is_open())
 		        throw "Invalid output file.";
             while (std::getline(file, line))
             {
-                output << str_replace(line, argv[2], argv[3]);
+                output << replace_words(line, argv[2], argv[3]);
                 if (!file.eof())
                     output << '\n';
             }
@@ -69,7 +80,7 @@ int main(int argc, char const *argv[])
         catch(const char* exception)
         {
             std::cerr << "Error: " << exception << '\n';
-        }      
+        }
     }
     else
         std::cerr << "Invalid number of arguments." << std::endl;

@@ -5,18 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 12:26:36 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/18 17:55:06 by efumiko          ###   ########.fr       */
+/*   Created: 2021/01/18 15:43:50 by efumiko           #+#    #+#             */
+/*   Updated: 2021/01/18 15:43:51 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
-
-int main()
-{
-    Human bob;
-    
-    std::cout << bob.identify() << std::endl;
-    std::cout << bob.getBrain().identify() << std::endl;
-    return (0);
-}

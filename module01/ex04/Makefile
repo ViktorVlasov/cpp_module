@@ -6,20 +6,20 @@
 #    By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/29 11:14:06 by efumiko           #+#    #+#              #
-#    Updated: 2021/01/18 18:26:54 by efumiko          ###   ########.fr        #
+#    Updated: 2021/01/18 17:46:26 by efumiko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = main
+NAME = test
 
-# # INCLUDES
-# INC_DIR = ./
-# INC_FILES = 
-# INC = $(addprefix $(INC_DIR), $(INC_FILES))
+# INCLUDES
+#INC_DIR = ./
+#INC_FILES =
+#INC = $(addprefix $(INC_DIR), $(INC_FILES))
 
 # SOURCES 
 SRC_DIR = ./
-SRC_FILES =	main.cpp
+SRC_FILES =	ex04.cpp
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 
 # OBJECTS
@@ -28,7 +28,7 @@ OBJS =	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
 
 # COMP
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror #-I$(INC_DIR)
 
 # MAIN
 all: $(NAME)
@@ -41,7 +41,7 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
-$(OBJ_DIR)%.o : $(SRC_DIR)%.cpp 
+$(OBJ_DIR)%.o : $(SRC_DIR)%.cpp
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:

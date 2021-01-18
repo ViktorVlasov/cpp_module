@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 23:50:40 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/18 00:48:04 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/18 16:15:59 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
     Fixed();
     Fixed(const Fixed &fixed);
     ~Fixed();
-    Fixed &operator=(Fixed const &fixed);
+    Fixed &operator=(const Fixed &fixed);
     int getRawBits(void) const;
     void setRawBits(const int Raw);
 };
