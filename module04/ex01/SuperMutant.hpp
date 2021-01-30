@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 10:43:49 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/30 11:02:44 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/30 12:08:47 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 
 class SuperMutant : public Enemy
 {
-private:
-    SuperMutant();
 public:
-    SuperMutant(int hp, const std::string &type);
+    SuperMutant();
     SuperMutant(const SuperMutant &superMutant);
     virtual ~SuperMutant();
     SuperMutant &operator=(const SuperMutant &superMutant);

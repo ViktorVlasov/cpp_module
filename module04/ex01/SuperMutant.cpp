@@ -6,14 +6,13 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 11:02:46 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/30 11:03:20 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/30 12:09:13 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SuperMutant.hpp"
 
-SuperMutant::SuperMutant(int hp, const std::string &type) : 
-        Enemy(170, "Super Mutant")
+SuperMutant::SuperMutant() : Enemy(170, "Super Mutant")
 {
     std::cout << "Gaaah. Me want smash heads!\n"; 
 }

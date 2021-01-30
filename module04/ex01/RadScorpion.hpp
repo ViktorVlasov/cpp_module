@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 11:04:13 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/30 11:09:17 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/30 12:08:36 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 
 class RadScorpion : public Enemy
 {
-private:
-    RadScorpion();
 public:
-    RadScorpion(int hp, const std::string &type);
+    RadScorpion();
     RadScorpion(const RadScorpion &radScorpion);
     virtual ~RadScorpion();
     RadScorpion &operator=(const RadScorpion &radScorpion);

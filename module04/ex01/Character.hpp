@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 11:09:55 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/30 12:04:08 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/30 12:06:32 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <iostream>
 # include "AWeapon.hpp"
 # include "Enemy.hpp"
+# include "RadScorpion.hpp"
+# include "SuperMutant.hpp"
+# include "PlasmaRifle.hpp"
+# include "PowerFist.hpp"
 
 class Character
 {

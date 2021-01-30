@@ -6,14 +6,13 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 10:23:39 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/30 10:25:38 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/30 12:10:36 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PlasmaRifle.hpp"
 
-PlasmaRifle::PlasmaRifle(const std::string &name, int apcost, int damage) :
-    AWeapon("Plasma Rifle", 5, 21)
+PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 5, 21)
 {}
 
 PlasmaRifle::PlasmaRifle(const PlasmaRifle &plasmaRifle) :
