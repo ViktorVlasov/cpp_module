@@ -6,11 +6,11 @@
 #    By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/29 11:14:06 by efumiko           #+#    #+#              #
-#    Updated: 2021/01/29 23:39:11 by efumiko          ###   ########.fr        #
+#    Updated: 2021/01/30 12:14:18 by efumiko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = ex00
 
 # INCLUDES
 INC_DIR = ./

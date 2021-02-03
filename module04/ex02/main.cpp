@@ -5,28 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/26 23:02:13 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/03 14:14:17 by efumiko          ###   ########.fr       */
+/*   Created: 2021/01/31 00:09:03 by efumiko           #+#    #+#             */
+/*   Updated: 2021/01/31 00:09:37 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "SuperTrap.hpp"
+#include "ISpaceMarine.hpp"
+#include "TacticalMarine.hpp"
+#include "AssaultTerminator.hpp"
+#include "ISquad.hpp"
+#include "Squad.hpp"
 
-int main(int argc, char const *argv[])
+int main()
 {
-    srand(time(NULL));
-
-    SuperTrap superTest("SuperTester");
-    std::cout << "=======" << std::endl;
-
-    NinjaTrap ninjaTest("NinjaTester");    
-    std::cout << "=======" << std::endl;
-       
-    superTest.NinjaTrap::meleeAttack(ninjaTest.getName());
-    superTest.ninjaShoebox(ninjaTest);
-    superTest.FragTrap::rangedAttack(ninjaTest.getName());
-
-    std::cout << "=======" << std::endl;
+    ISpaceMarine* bob = new TacticalMarine;
+    ISpaceMarine* jim = new AssaultTerminator;
+    ISquad* vlc = new Squad;
+    vlc->push(bob);
+    vlc->push(jim);
+    for (int i = 0; i < vlc->getCount(); ++i)
+    {
+        ISpaceMarine* cur = vlc->getUnit(i);
+        cur->battleCry();
+        cur->rangedAttack();
+        cur->meleeAttack();
+    }
+    delete vlc;
     return 0;
 }

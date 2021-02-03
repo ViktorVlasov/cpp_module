@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 11:09:19 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/30 12:09:09 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/01/30 12:18:26 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ RadScorpion::RadScorpion(const RadScorpion &radScorpion) :
 
 RadScorpion::~RadScorpion()
 {
-    std::cout << "* SPROTCH *n";
+    std::cout << "* SPROTCH *\n";
 }
 
 RadScorpion &RadScorpion::operator=(const RadScorpion &radScorpion)

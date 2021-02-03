@@ -6,7 +6,7 @@
 #    By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/29 11:14:06 by efumiko           #+#    #+#              #
-#    Updated: 2021/01/29 23:39:11 by efumiko          ###   ########.fr        #
+#    Updated: 2021/01/30 12:13:08 by efumiko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,14 @@ NAME = ex01
 
 # INCLUDES
 INC_DIR = ./
-INC_FILES = Sorcerer.hpp Victim.hpp Peon.hpp
+INC_FILES = AWeapon.hpp Character.hpp Enemy.hpp PlasmaRifle.hpp \
+			RadScorpion.hpp SuperMutant.hpp PowerFist.hpp
 INC = $(addprefix $(INC_DIR), $(INC_FILES))
 
 # SOURCES 
 SRC_DIR = ./
-SRC_FILES =	main.cpp Sorcerer.cpp Victim.cpp Peon.cpp
+SRC_FILES =	main.cpp AWeapon.cpp Character.cpp Enemy.cpp PlasmaRifle.cpp \
+			RadScorpion.cpp SuperMutant.cpp PowerFist.cpp
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 
 # OBJECTS
