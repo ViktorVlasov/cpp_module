@@ -6,20 +6,21 @@
 #    By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/29 11:14:06 by efumiko           #+#    #+#              #
-#    Updated: 2021/02/03 14:40:22 by efumiko          ###   ########.fr        #
+#    Updated: 2021/02/03 15:38:50 by efumiko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex04
+NAME = ex02
 
 # INCLUDES
 INC_DIR = ./
-INC_FILES = FragTrap.hpp ScavTrap.hpp ClapTrap.hpp NinjaTrap.hpp SuperTrap.hpp
+INC_FILES = ISquad.hpp ISpaceMarine.hpp AssaultTerminator.hpp \
+			TacticalMarine.hpp Squad.hpp
 INC = $(addprefix $(INC_DIR), $(INC_FILES))
 
 # SOURCES 
 SRC_DIR = ./
-SRC_FILES =	main.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp NinjaTrap.cpp SuperTrap.cpp
+SRC_FILES =	main.cpp Squad.cpp TacticalMarine.cpp AssaultTerminator.cpp 
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 
 # OBJECTS

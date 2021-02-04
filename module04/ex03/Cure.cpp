@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/31 00:01:55 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/03 15:18:33 by efumiko          ###   ########.fr       */
+/*   Created: 2021/02/03 17:31:41 by efumiko           #+#    #+#             */
+/*   Updated: 2021/02/03 17:33:27 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_HPP
-# define SQUAD_HPP
+#include "Cure.hpp"
 
-# include <iostream>
-# include "ISquad.hpp"
+Cure::Cure() : AMateria("cure")
+{}
 
-class Squad: public ISquad
+Cure::Cure(const Cure &cure) : AMateria(cure)
+{}
+
+Cure::~Cure()
+{}
+
+Cure &Cure::operator=(const Cure &cure)
 {
-private:
-	int count;
-	ISpaceMarine **arr_units;
-public:
-	Squad();
-	Squad(const Squad &squad);
-	virtual ~Squad();
-	Squad &operator=(const Squad &squad);
+	AMateria::operator=(cure);
+	return (*this);
+}
 
-	int getCount(void) const;
-	ISpaceMarine *getUnit(int n) const;
-	int push(ISpaceMarine *unit);
-};
+AMateria *Cure::clone() const
+{
+	return (new Cure(*this));
+}
 
-#endif
+void Cure::use(ICharacter &target)
+{
+	AMateria::use(target);
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}

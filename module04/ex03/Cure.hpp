@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/31 00:01:55 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/03 15:18:33 by efumiko          ###   ########.fr       */
+/*   Created: 2021/02/03 17:23:30 by efumiko           #+#    #+#             */
+/*   Updated: 2021/02/03 17:27:24 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_HPP
-# define SQUAD_HPP
+#ifndef CURE_HPP_
+# define CURE_HPP_
 
-# include <iostream>
-# include "ISquad.hpp"
+# include "AMateria.hpp"
 
-class Squad: public ISquad
+class Cure : public AMateria
 {
-private:
-	int count;
-	ISpaceMarine **arr_units;
-public:
-	Squad();
-	Squad(const Squad &squad);
-	virtual ~Squad();
-	Squad &operator=(const Squad &squad);
+	public:
+		Cure();
+		Cure(const Cure &other);
+		virtual ~Cure();
+		Cure& operator=(const Cure &other);
 
-	int getCount(void) const;
-	ISpaceMarine *getUnit(int n) const;
-	int push(ISpaceMarine *unit);
+		virtual AMateria* clone() const;
+		virtual void use(ICharacter &target);
 };
+
+
 
 #endif

@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/31 00:01:55 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/03 15:18:33 by efumiko          ###   ########.fr       */
+/*   Created: 2021/02/03 17:27:54 by efumiko           #+#    #+#             */
+/*   Updated: 2021/02/03 17:33:32 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_HPP
-# define SQUAD_HPP
+#include "Ice.hpp"
 
-# include <iostream>
-# include "ISquad.hpp"
+Ice::Ice() : AMateria("ice") 
+{}
 
-class Squad: public ISquad
+Ice::Ice(const Ice &ice) : AMateria(ice)
+{}
+
+Ice::~Ice()
+{}
+
+Ice &Ice::operator=(const Ice &ice)
 {
-private:
-	int count;
-	ISpaceMarine **arr_units;
-public:
-	Squad();
-	Squad(const Squad &squad);
-	virtual ~Squad();
-	Squad &operator=(const Squad &squad);
+	AMateria::operator=(ice);
+	return (*this);
+}
 
-	int getCount(void) const;
-	ISpaceMarine *getUnit(int n) const;
-	int push(ISpaceMarine *unit);
-};
+AMateria *Ice::clone() const
+{
+	return (new Ice(*this));
+}
 
-#endif
+void Ice::use(ICharacter &target)
+{
+	AMateria::use(target);
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}

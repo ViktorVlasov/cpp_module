@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/31 00:01:55 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/03 15:18:33 by efumiko          ###   ########.fr       */
+/*   Created: 2021/02/03 17:23:32 by efumiko           #+#    #+#             */
+/*   Updated: 2021/02/03 17:27:04 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_HPP
-# define SQUAD_HPP
+#ifndef ICE_HPP_
+# define ICE_HPP_
 
-# include <iostream>
-# include "ISquad.hpp"
+# include "AMateria.hpp"
 
-class Squad: public ISquad
+class Ice : public AMateria
 {
-private:
-	int count;
-	ISpaceMarine **arr_units;
-public:
-	Squad();
-	Squad(const Squad &squad);
-	virtual ~Squad();
-	Squad &operator=(const Squad &squad);
+	public:
+		Ice();
+		Ice(const Ice &other);
+		virtual ~Ice();
+		Ice& operator=(const Ice &other);
 
-	int getCount(void) const;
-	ISpaceMarine *getUnit(int n) const;
-	int push(ISpaceMarine *unit);
+		virtual AMateria* clone() const;
+		virtual void use(ICharacter &target);
 };
 
 #endif
