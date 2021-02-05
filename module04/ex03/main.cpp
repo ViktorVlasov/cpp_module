@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 17:33:48 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/05 13:31:28 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/05 16:32:45 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int main()
         cpy_hero.use(1, hero);
         cpy_hero.use(2, hero);
 
-        cpy_hero.unequip(0);
         cpy_hero.use(0, hero);
 
         std::cout << "=========== TEST END ===========\n"; 

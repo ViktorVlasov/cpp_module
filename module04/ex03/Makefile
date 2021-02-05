@@ -6,7 +6,7 @@
 #    By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/29 11:14:06 by efumiko           #+#    #+#              #
-#    Updated: 2021/02/05 12:37:33 by efumiko          ###   ########.fr        #
+#    Updated: 2021/02/05 16:34:01 by efumiko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,13 +30,13 @@ OBJS =	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
 
 # COMP
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR)
+FLAGS = -Wall -Wextra -Werror -I$(INC_DIR)
 
 # MAIN
 all: $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJS)
-	@$(CC) $(FLAGS) $(OBJS) -o $@
+	@$(CC) $(OBJS) -o $@
 	@echo "================ ALL DONE! ================"
 
 

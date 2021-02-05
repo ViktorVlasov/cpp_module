@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:17:08 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/05 13:17:15 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/05 16:26:10 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Character::Character(const Character& character) : _name(character._name)
 }
 
 Character::~Character()
-{
+{	
     for (int i = 0; i < 4; ++i)
 		if (this->_inventory[i])
 			delete this->_inventory[i];
@@ -58,9 +58,13 @@ void Character::equip(AMateria *m)
 	int i = 0;
 
     while (i < 4 && this->_inventory[i])
+	{
         i++;
+	}
 	if (i < 4)
+	{
 		this->_inventory[i] = m;
+	}
 }
 
 void Character::unequip(int idx)
