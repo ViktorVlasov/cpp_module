@@ -6,21 +6,22 @@
 #    By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/29 11:14:06 by efumiko           #+#    #+#              #
-#    Updated: 2021/02/05 12:34:57 by efumiko          ###   ########.fr        #
+#    Updated: 2021/02/05 12:37:33 by efumiko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex03
 
 # INCLUDES
 INC_DIR = ./
-INC_FILES = ISquad.hpp ISpaceMarine.hpp AssaultTerminator.hpp \
-			TacticalMarine.hpp Squad.hpp
+INC_FILES = AMateria.hpp Character.hpp Cure.hpp MateriaSource.hpp \
+			Ice.hpp ICharacter.hpp IMateriaSource.hpp 
 INC = $(addprefix $(INC_DIR), $(INC_FILES))
 
 # SOURCES 
 SRC_DIR = ./
-SRC_FILES =	main.cpp Squad.cpp TacticalMarine.cpp AssaultTerminator.cpp 
+SRC_FILES =	main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp \
+			MateriaSource.cpp
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 
 # OBJECTS

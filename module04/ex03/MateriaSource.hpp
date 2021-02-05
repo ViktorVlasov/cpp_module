@@ -6,12 +6,12 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 17:33:44 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/03 17:36:47 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/05 11:58:29 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP_
-# define MATERIASOURCE_HPP_
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 # include "IMateriaSource.hpp"
 # include "Character.hpp"
@@ -20,7 +20,6 @@ class MateriaSource : public IMateriaSource
 {
 	private:
 		AMateria *_inventory[4];
-
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource &materiaSource);
@@ -31,4 +30,4 @@ class MateriaSource : public IMateriaSource
 		AMateria* createMateria(std::string const &type);
 };
 
-#endif /* MATERIASOURCE_HPP_ */
+#endif

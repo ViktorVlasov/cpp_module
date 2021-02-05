@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 10:23:39 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/30 12:10:36 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/04 21:24:19 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 5, 21)
 {}
 
-PlasmaRifle::PlasmaRifle(const PlasmaRifle &plasmaRifle) :
-    AWeapon(plasmaRifle)
+PlasmaRifle::PlasmaRifle(const PlasmaRifle &plasmaRifle) : AWeapon(plasmaRifle)
 {}
 
 PlasmaRifle:: ~PlasmaRifle() {}

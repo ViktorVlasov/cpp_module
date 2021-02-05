@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 10:25:52 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/30 12:10:14 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/04 21:23:23 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50)
 {}
 
-PowerFist::PowerFist(const PowerFist &powerFist) :
-    AWeapon(powerFist)
+PowerFist::PowerFist(const PowerFist &powerFist) : AWeapon(powerFist)
 {}
 
 PowerFist:: ~PowerFist() {}

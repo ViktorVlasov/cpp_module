@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 15:07:03 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/03 15:54:22 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/05 11:40:52 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,7 @@ int Squad::push(ISpaceMarine *unit)
 		for (int i = 0; i < this->count; i++)
 			new_arr_units[i] = this->arr_units[i];
 		new_arr_units[this->count] = unit; 
-		delete[] this->arr_units;Be thorough when you’re making the main function that you will turn in to get your
-grade...Be thorough when you’re making the main function that you will turn in to get your
-grade...
+		delete[] this->arr_units;
 		this->arr_units = new_arr_units;
 		this->count++;
 	}

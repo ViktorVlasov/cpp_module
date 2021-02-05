@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 17:33:46 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/03 17:44:25 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/05 13:25:14 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ MateriaSource::MateriaSource()
 		_inventory[i] = NULL;
 }
 
-MateriaSource::MateriaSource(const MateriaSource &other)
+MateriaSource::MateriaSource(const MateriaSource &materiaSource)
 {
 	for (int i = 0; i < 4; ++i)
 		_inventory[i] = NULL;
-
-	this->operator =(other);
+	this->operator=(materiaSource);
 }
 
 MateriaSource::~MateriaSource()
@@ -36,23 +35,16 @@ MateriaSource::~MateriaSource()
 	}
 }
 
-MateriaSource &MateriaSource::operator=(const MateriaSource &other)
+MateriaSource &MateriaSource::operator=(const MateriaSource &materiaSource)
 {
-	if (this != &other)
+	for (int i = 0; i < 4; ++i)
 	{
-		for (int index = 0; index < 4; ++index)
-		{
-			AMateria *&at = _inventory[index];
-			AMateria *otherAt = other._inventory[index];
-
-			if (at)
-				delete at;
-
-			at = NULL;
-
-			if (otherAt)
-				at = otherAt->clone();
-		}
+		if (_inventory[i])
+			delete _inventory[i];
+		if (materiaSource._inventory[i])
+			_inventory[i] = materiaSource._inventory[i]->clone();
+		else
+			_inventory[i] = NULL;
 	}
 	return (*this);
 }
@@ -61,7 +53,7 @@ void MateriaSource::learnMateria(AMateria *materia)
 {
 	for (int i = 0; i < 4; ++i)
 	{
-		if (!_inventory[i])
+		if (!_inventory[i] && materia)
 		{
 			_inventory[i] = materia;
 			break;

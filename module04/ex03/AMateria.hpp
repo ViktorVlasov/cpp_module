@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 15:54:40 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/03 17:23:17 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/05 12:39:32 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define AMATERIA_HPP
 
 # include <iostream>
-# include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria
 {
@@ -35,5 +36,6 @@ public:
     virtual AMateria* clone() const = 0;
 };
 
+# include "ICharacter.hpp"
 
 #endif

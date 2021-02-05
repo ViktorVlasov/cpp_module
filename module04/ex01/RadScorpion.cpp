@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 11:09:19 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/30 12:18:26 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/04 21:17:51 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ RadScorpion::RadScorpion() : Enemy(80, "RadScorpion")
     std::cout << "* click click click *\n"; 
 }
 
-RadScorpion::RadScorpion(const RadScorpion &radScorpion) : 
-        Enemy(radScorpion)
+RadScorpion::RadScorpion(const RadScorpion &radScorpion) : Enemy(radScorpion)
 {
     std::cout << "* click click click *\n"; 
 }

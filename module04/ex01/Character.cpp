@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 12:14:59 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/30 12:17:09 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/04 21:27:41 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void Character::attack(Enemy* enemy)
         ap -= weapon->getAPCost();
         weapon->attack();
         enemy->takeDamage(weapon->getDamage());
-        if (enemy->getHP() <= 0)
+        if (enemy->getHP() == 0)
             enemy->~Enemy();
     }
 }

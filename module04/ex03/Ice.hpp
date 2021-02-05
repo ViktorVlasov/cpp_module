@@ -6,12 +6,12 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 17:23:32 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/03 17:27:04 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/05 11:57:52 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP_
-# define ICE_HPP_
+#ifndef ICE_HPP
+# define ICE_HPP
 
 # include "AMateria.hpp"
 

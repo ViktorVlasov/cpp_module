@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:17:08 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/03 17:21:27 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/05 13:17:15 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ Character::Character(const std::string &name) : _name(name)
 Character::Character(const Character& character) : _name(character._name)
 {
 	for (int i = 0; i < 4; ++i)
-		if (this->_inventory[i])
-			delete this->_inventory[i];
-	for (int i = 0; i < 4; i++)
+		_inventory[i] = NULL;
+	for (int i = 0; i < 4; ++i)
+	{
 		if (character._inventory[i])
 			this->_inventory[i] = character._inventory[i]->clone();
+	}
 }
 
 Character::~Character()
@@ -42,7 +43,10 @@ Character &Character::operator=(const Character& character)
     {
         if (this->_inventory[i])
 			delete this->_inventory[i];
-		this->_inventory[i] = character._inventory[i];
+		if (character._inventory[i])
+			this->_inventory[i] = character._inventory[i]->clone();
+		else
+			this->_inventory[i] = NULL;
     }
 	return (*this);
 }
@@ -53,7 +57,7 @@ void Character::equip(AMateria *m)
 {
 	int i = 0;
 
-    while (i < 4 && this->_inventory[i] != NULL)
+    while (i < 4 && this->_inventory[i])
         i++;
 	if (i < 4)
 		this->_inventory[i] = m;
@@ -67,6 +71,6 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx >= 0 && idx < 4)
+	if (idx >= 0 && idx < 4 && this->_inventory[idx])
 		this->_inventory[idx]->use(target);
 }

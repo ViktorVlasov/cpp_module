@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 10:43:30 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/30 12:03:10 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/04 21:29:08 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,6 @@ void Enemy::takeDamage(int damage)
 {
     if (damage >= 0)
         this->hp -= damage;
+    if (this->hp < 0)
+        this->hp = 0;
 }

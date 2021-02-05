@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 12:27:19 by efumiko           #+#    #+#             */
-/*   Updated: 2021/01/29 23:25:46 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/04 20:46:46 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ private:
 public:
     Sorcerer(std::string name, std::string title);
     Sorcerer(const Sorcerer &sorcerer);
-    ~Sorcerer();
+    virtual ~Sorcerer();
     Sorcerer &operator=(const Sorcerer &sorcerer);
     
     const std::string &getName(void) const;
