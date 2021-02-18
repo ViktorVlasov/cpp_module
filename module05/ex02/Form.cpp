@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 16:37:34 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/18 21:33:33 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/18 22:15:12 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,24 @@ const char* Form::GradeTooLowException::what() const throw()
 	return ("Form::GradeTooLowException");
 }
 
+const char* Form::FormIsSignedException::what() const throw()
+{
+	return ("Form::FormIsSignedException");
+}
+
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->gradeSign)
 		throw Form::GradeTooLowException();
 	this->wasSigned = true;
+}
+
+void Form::execute(const Bureaucrat &executor) const
+{
+	if (this->wasSigned == false)
+		throw Form::FormIsSignedException();
+	else if (executor.getGrade() > this->gradeExecute)
+		throw Form::GradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &out, const Form &form)

@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 16:37:31 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/18 21:55:18 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/02/18 22:13:33 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,12 @@ public:
 	class GradeTooLowException: public std::exception {
 		const char* what() const throw();
 	};
+	class FormIsSignedException: public std::exception {
+		const char* what() const throw();
+	};
 
-    void beSigned(Bureaucrat const &bureaucrat);
+    void beSigned(const Bureaucrat &bureaucrat);
+    void execute(const Bureaucrat &executor) const;
 };
 
 std::ostream &operator<<(std::ostream &out, const Form &form);
