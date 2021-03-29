@@ -6,7 +6,7 @@
 #    By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/29 11:14:06 by efumiko           #+#    #+#              #
-#    Updated: 2021/03/29 21:35:46 by efumiko          ###   ########.fr        #
+#    Updated: 2021/03/29 21:41:12 by efumiko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,18 +55,5 @@ fclean: clean
 
 
 re: fclean all
-
-test: $(NAME)
-	./$(NAME) 0
-	./$(NAME) nan
-	./$(NAME) +inff
-	./$(NAME) -inf
-	./$(NAME) 42
-	./$(NAME) 42.0
-	./$(NAME) 42.0f
-	./$(NAME) 99999999999999999999999
-	./$(NAME) dasdsa
-	valgrind ./ex01
-
 
 .PHONY: all clean fclean re
