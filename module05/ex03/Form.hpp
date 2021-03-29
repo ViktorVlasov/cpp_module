@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 16:37:31 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/18 22:13:33 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/03/26 11:26:26 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ public:
 	};
 
     void beSigned(const Bureaucrat &bureaucrat);
-    void execute(const Bureaucrat &executor) const;
+    virtual void execute(const Bureaucrat &executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &out, const Form &form);

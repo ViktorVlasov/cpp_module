@@ -6,32 +6,81 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 15:27:14 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/18 21:56:18 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/03/26 12:12:00 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "Intern.hpp"
 
  int main()
  {
-    Bureaucrat *senior_bure = new Bureaucrat("Bob", 20);
-    Bureaucrat *junior_bure = new Bureaucrat("Charlie", 145);
-    Form *form_b1 = new Form("B1", 100, 100);
+   {
+      std::cout << "======Test 1========" << std::endl;
+      Bureaucrat *senior_bure = new Bureaucrat("Bob", 1);
+      Bureaucrat *junior_bure = new Bureaucrat("Charlie", 145);
 
-    std::cout << *senior_bure << std::endl;
-    std::cout << *junior_bure << std::endl;
-    std::cout << *form_b1 << std::endl;
+      Intern someRandomIntern;
+      Form* rrf;
+      try 
+      {
+         rrf = someRandomIntern.makeForm("rObotomy request", "Bender");
+         std::cout << "==========================\n";
+         std::cout << *senior_bure << std::endl;
+         std::cout << *junior_bure << std::endl;
+         std::cout << *rrf << std::endl;
+         std::cout << "==========================\n";
 
-    junior_bure->signForm(*form_b1);
-    std::cout << *form_b1 << std::endl;
-    
-    senior_bure->signForm(*form_b1);
-    std::cout << *form_b1 << std::endl;
+         junior_bure->signForm(*rrf);
+         std::cout << *rrf << std::endl;
+         std::cout << "==========================\n";
 
-    delete form_b1;
-    delete junior_bure;
-    delete senior_bure;
-    return 0;
+         senior_bure->signForm(*rrf);
+         std::cout << *rrf << std::endl;
+
+         delete rrf;
+      }
+      catch (std::exception const &e) {
+         std::cerr << e.what() << std::endl;
+      }
+
+      delete junior_bure;
+      delete senior_bure;
+   }
+
+   {
+      std::cout << "======Test 2========" << std::endl;
+
+      Bureaucrat *senior_bure = new Bureaucrat("Bob", 1);
+      Bureaucrat *junior_bure = new Bureaucrat("Charlie", 145);
+
+      Intern someRandomIntern;
+      Form* rrf;
+      try 
+      {
+         rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+         std::cout << "==========================\n";
+         std::cout << *senior_bure << std::endl;
+         std::cout << *junior_bure << std::endl;
+         std::cout << *rrf << std::endl;
+         std::cout << "==========================\n";
+
+         junior_bure->signForm(*rrf);
+         std::cout << *rrf << std::endl;
+         std::cout << "==========================\n";
+
+         senior_bure->signForm(*rrf);
+         std::cout << *rrf << std::endl;
+
+         delete rrf;
+      }
+      catch (std::exception const &e) {
+         std::cerr << e.what() << std::endl;
+      }
+
+      delete junior_bure;
+      delete senior_bure;
+   }
  }
  

@@ -6,22 +6,20 @@
 #    By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/29 11:14:06 by efumiko           #+#    #+#              #
-#    Updated: 2021/03/25 19:14:46 by efumiko          ###   ########.fr        #
+#    Updated: 2021/03/29 21:35:46 by efumiko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex03
+NAME = ex02
 
 # INCLUDES
 INC_DIR = ./
-INC_FILES = AMateria.hpp Character.hpp Cure.hpp MateriaSource.hpp \
-			Ice.hpp ICharacter.hpp IMateriaSource.hpp 
+INC_FILES = Identify.hpp
 INC = $(addprefix $(INC_DIR), $(INC_FILES))
 
 # SOURCES 
 SRC_DIR = ./
-SRC_FILES =	main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp \
-			MateriaSource.cpp
+SRC_FILES = main.cpp
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 
 # OBJECTS
@@ -57,5 +55,18 @@ fclean: clean
 
 
 re: fclean all
+
+test: $(NAME)
+	./$(NAME) 0
+	./$(NAME) nan
+	./$(NAME) +inff
+	./$(NAME) -inf
+	./$(NAME) 42
+	./$(NAME) 42.0
+	./$(NAME) 42.0f
+	./$(NAME) 99999999999999999999999
+	./$(NAME) dasdsa
+	valgrind ./ex01
+
 
 .PHONY: all clean fclean re

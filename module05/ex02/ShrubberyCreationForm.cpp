@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 22:30:41 by efumiko           #+#    #+#             */
-/*   Updated: 2021/02/18 23:04:29 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/03/26 12:59:11 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ const char* ShrubberyCreationForm::OpenFileException::what() const throw()
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	Form::execute(executor);
-	std::ofstream outf(this->target + "_shrubbery", std::ios::out | std::ios::app);
+	std::ofstream outf((this->target + "_shrubbery").c_str());
 
-	if (!outf.is_open() || !outf.bad())
+	if (!outf.is_open())
 		throw OpenFileException();
     outf << "       ###    " << std::endl;
     outf << "      #o###   " << std::endl;

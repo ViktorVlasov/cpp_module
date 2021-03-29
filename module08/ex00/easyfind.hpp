@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                         :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/28 12:27:23 by efumiko           #+#    #+#             */
-/*   Updated: 2021/03/25 19:17:34 by efumiko          ###   ########.fr       */
+/*   Created: 2021/03/27 20:17:35 by efumiko           #+#    #+#             */
+/*   Updated: 2021/03/27 20:58:07 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_HPP
-# define VICTIM_HPP
-
 #include <iostream>
+#include <algorithm>
+#include <iterator>
 
-class Victim
+template <typename T>
+typename T::iterator easyfind(T &container, int value)
 {
-private:
-    Victim();
-protected:
-    std::string name;
-public:
-    Victim(std::string name);
-    Victim(const Victim &victim);
-    virtual ~Victim();
-    Victim &operator=(const Victim &victim);
-
-    virtual void getPolymorphed() const;
-    const std::string &getName(void) const;
-};
-
-std::ostream& operator<< (std::ostream &out, const Victim &victim);
-
-#endif 
+	typename T::iterator found = std::find(container.begin(), container.end(), value);
+	if (found != container.end())
+	    return(found);
+    throw std::logic_error("Element not found!");
+}

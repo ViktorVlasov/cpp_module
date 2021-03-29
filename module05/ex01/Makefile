@@ -6,22 +6,20 @@
 #    By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/29 11:14:06 by efumiko           #+#    #+#              #
-#    Updated: 2021/03/25 19:14:46 by efumiko          ###   ########.fr        #
+#    Updated: 2021/03/26 10:16:15 by efumiko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex03
+NAME = ex01
 
 # INCLUDES
 INC_DIR = ./
-INC_FILES = AMateria.hpp Character.hpp Cure.hpp MateriaSource.hpp \
-			Ice.hpp ICharacter.hpp IMateriaSource.hpp 
+INC_FILES = Bureaucrat.hpp Form.hpp
 INC = $(addprefix $(INC_DIR), $(INC_FILES))
 
 # SOURCES 
 SRC_DIR = ./
-SRC_FILES =	main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp \
-			MateriaSource.cpp
+SRC_FILES =	main.cpp Bureaucrat.cpp Form.cpp
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 
 # OBJECTS
@@ -30,7 +28,7 @@ OBJS =	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
 
 # COMP
 CC = clang++
-FLAGS = -std=c++98 -Wall -Wextra -Werror -I$(INC_DIR)
+FLAGS = -Wall -Wextra -Werror -I$(INC_DIR)
 
 # MAIN
 all: $(NAME)

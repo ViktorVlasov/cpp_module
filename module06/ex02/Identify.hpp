@@ -1,36 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                         :+:      :+:    :+:   */
+/*   Identify.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/28 12:27:23 by efumiko           #+#    #+#             */
-/*   Updated: 2021/03/25 19:17:34 by efumiko          ###   ########.fr       */
+/*   Created: 2021/03/29 16:03:27 by efumiko           #+#    #+#             */
+/*   Updated: 2021/03/29 21:34:45 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_HPP
-# define VICTIM_HPP
+#ifndef IDENTIFY_HPP
+# define IDENTIFY_HPP
 
-#include <iostream>
+# include <iostream>
+# include <cstdlib>
 
-class Victim
+class Base
 {
-private:
-    Victim();
-protected:
-    std::string name;
 public:
-    Victim(std::string name);
-    Victim(const Victim &victim);
-    virtual ~Victim();
-    Victim &operator=(const Victim &victim);
-
-    virtual void getPolymorphed() const;
-    const std::string &getName(void) const;
+    virtual ~Base(){};
 };
 
-std::ostream& operator<< (std::ostream &out, const Victim &victim);
+class A : public Base 
+{
+public:
+    virtual ~A(){};
+};
 
-#endif 
+class B : public Base 
+{
+public:
+    virtual ~B(){};
+};
+
+class C : public Base 
+{
+public:
+    virtual ~C(){};
+};
+
+Base *generate(void);
+void identify_from_pointer(Base *p);
+void identify_from_reference(Base &p);
+
+#endif
