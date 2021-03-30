@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 20:28:45 by efumiko           #+#    #+#             */
-/*   Updated: 2021/03/27 20:56:25 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/03/30 22:10:31 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,23 @@
 #include <vector>
 #include <list>
 #include <deque>
+#include <ctime>
 
 int main(void)
 {
+    srand(time(NULL));
     {
         std::cout << "=================TEST 1: vector of int=================" << std::endl;
-        std::vector<int> test1 {1, 2, 2, 5, 5, 3, 7, 8, 9, 2};
+        std::vector<int> test1;
+        for (int i = 0; i < 10; i++)
+		    test1.push_back(rand() % 10);
         try
-        {
+        {           
             std::cout << *easyfind(test1, 3) << std::endl;
-            std::vector<int>::iterator it = easyfind(test1, 3);
-            *it = 100;
-            for (int i: test1)
-                std::cout << i << " ";
+            for (size_t i = 0; i < test1.size(); i++)
+                std::cout << test1[i] << " ";
             std::cout << std::endl;
-            std::cout << *easyfind(test1, 3) << std::endl;
+            std::cout << *easyfind(test1, -10) << std::endl;
         }
         catch(const std::exception& e)
         {
@@ -38,7 +40,9 @@ int main(void)
 
     {
         std::cout << "=================TEST 2: list of int=================" << std::endl;
-        std::list<int> test2 {1, 2, 2, 5, 5, 3, 7, 8, 9, 3};
+        std::list<int> test2;
+        for (int i = 0; i < 10; i++)
+		    test2.push_back(rand() % 10);
         try
         {
             std::cout << *easyfind(test2, 7) << std::endl;        
@@ -52,7 +56,9 @@ int main(void)
 
     {
         std::cout << "=================TEST 3: deque of int=================" << std::endl;
-        std::deque<int> test3 {1, 2, 2, 5, 5, 3, 7, 8, 9, 3};
+        std::deque<int> test3;
+        for (int i = 0; i < 10; i++)
+		    test3.push_back(rand() % 10);
         try
         {
             std::cout << *easyfind(test3, 2) << std::endl;        
