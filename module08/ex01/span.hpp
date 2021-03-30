@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 21:04:46 by efumiko           #+#    #+#             */
-/*   Updated: 2021/03/27 21:13:08 by efumiko          ###   ########.fr       */
+/*   Updated: 2021/03/30 19:54:49 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 class Span
 {
 private:
-	std::vector<int> arr;
 	unsigned int N;
+	std::vector<int> arr;
 	Span();
 public:
 	Span(unsigned int N);
@@ -31,26 +31,20 @@ public:
 	Span& operator=(const Span& other);
 	
 	void addNumber(int elem);
-    template <typename T>
-	void	addNumber(T begin, T end) 
-    {
-		if (std::distance(begin, end) + this->arr.size() > this->N)
-			throw Span::MaxSizeError();
-		this->arr.insert(this->arr.end(), begin, end);
-	}
+	void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 	
-    class MaxSizeError : public std::exception {
+    class ArrFullException : public std::exception {
 		virtual const char *what() const throw();
 	};
-	class NotEnoughElements : public std::exception {
+	class TooFewException : public std::exception {
 		virtual const char *what() const throw();
 	};
 	class SpanNotFound : public std::exception {
 		virtual const char *what() const throw();
 	};
-	int	shortestSpan() const;
-	int	longestSpan() const;
+	
+	int	shortestSpan();
+	int	longestSpan();
 };
-
 
 #endif
